@@ -35,6 +35,11 @@
     - Set up policies for authenticated users
 */
 
+-- Drop tables if they exist (in juiste volgorde ivm foreign keys)
+DROP TABLE IF EXISTS cohort_access;
+DROP TABLE IF EXISTS students;
+DROP TABLE IF EXISTS cohorts;
+
 -- Create cohorts table
 CREATE TABLE IF NOT EXISTS cohorts (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),

@@ -22,7 +22,7 @@ function App() {
   }
 
   if (!user) {
-    return <LoginForm />;
+    return <LoginForm onSuccess={() => {}} />;
   }
 
   return (
