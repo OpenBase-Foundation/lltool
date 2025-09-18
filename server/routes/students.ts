@@ -1,6 +1,6 @@
 import { Router, Response } from 'express';
-import { DatabaseService } from '../services/database';
-import { StudentInsert, StudentUpdate } from '../types/database';
+import { DatabaseService } from '../services/database.js';
+import { StudentInsert, StudentUpdate } from '../types/database.js';
 import { AuthenticatedRequest, authenticateToken } from '../middleware/auth.js';
 
 const router = Router();

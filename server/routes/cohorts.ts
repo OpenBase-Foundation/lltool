@@ -1,7 +1,7 @@
 import { Router, Response } from 'express';
-import { DatabaseService } from '../services/database';
-import { CohortInsert, CohortUpdate, CohortAccessInsert } from '../types/database';
-import { AuthenticatedRequest, authenticateToken } from '../middleware/auth';
+import { DatabaseService } from '../services/database.js';
+import { CohortInsert, CohortUpdate, CohortAccessInsert } from '../types/database.js';
+import { AuthenticatedRequest, authenticateToken } from '../middleware/auth.js';
 
 const router = Router();
 

@@ -4,12 +4,12 @@ import path from 'path';
 import multer from 'multer';
 
 // Import routes
-import authRoutes from './routes/auth';
-import cohortRoutes from './routes/cohorts';
-import studentRoutes from './routes/students';
+import authRoutes from './routes/auth.js';
+import cohortRoutes from './routes/cohorts.js';
+import studentRoutes from './routes/students.js';
 
 // Import middleware
-import { authenticateToken } from './middleware/auth';
+import { authenticateToken } from './middleware/auth.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
