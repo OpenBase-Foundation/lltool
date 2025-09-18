@@ -1,7 +1,7 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import { DatabaseService } from './database';
-import { User, UserInsert } from '../types/database';
+import { DatabaseService } from './database.js';
+import { User, UserInsert } from '../types/database.js';
 
 export interface AuthUser {
   id: string;

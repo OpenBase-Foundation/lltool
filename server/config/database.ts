@@ -27,7 +27,7 @@ export const pool = mysql.createPool({
   // SSL configuration for Strato and other external hosts
   ssl: process.env.NODE_ENV === 'production' && dbConfig.host !== 'localhost' 
     ? { rejectUnauthorized: false } 
-    : false,
+    : undefined,
   // Additional options for external MySQL hosts
   reconnect: true,
   charset: 'utf8mb4',

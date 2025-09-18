@@ -1,9 +1,9 @@
-import pool from '../config/database';
+import pool from '../config/database.js';
 import { 
   User, Cohort, CohortAccess, Student,
   UserInsert, CohortInsert, CohortAccessInsert, StudentInsert,
   UserUpdate, CohortUpdate, CohortAccessUpdate, StudentUpdate
-} from '../types/database';
+} from '../types/database.js';
 
 export class DatabaseService {
   // User operations

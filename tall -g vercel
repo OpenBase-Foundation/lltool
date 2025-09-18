@@ -1,0 +1,10 @@
+[33mcddafd8[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdev[m[33m, [m[1;31morigin/dev[m[33m)[m Migrate from Supabase to MySQL with Strato hosting and GitHub Pages deployment
+[33m70d372b[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m Merge pull request #4 from MatsDevOfficial/dependabot/npm_and_yarn/eslint/plugin-kit-0.2.8
+[33me7598d4[m Merge pull request #3 from MatsDevOfficial/dependabot/npm_and_yarn/cross-spawn-7.0.6
+[33me90bf78[m removed space
+[33m7bf616c[m fix: environment variables and migration of server
+[33m4786050[m Create deploy.yml
+[33m6dbc04d[m Bump @eslint/plugin-kit from 0.2.0 to 0.2.8
+[33mef05555[m Bump cross-spawn from 7.0.3 to 7.0.6
+[33m3e33898[m Merge pull request #2 from MatsDevOfficial/dependabot/npm_and_yarn/multi-53fc0aa15d
+[33m4c16066[m Bump esbuild, @vitejs/plugin-react and vite
