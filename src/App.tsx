@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { useAuth } from './hooks/useAuth';
+import { useAuth } from './hooks/useAuthApi';
 import { LoginForm } from './components/Auth/LoginForm';
 import { Header } from './components/Layout/Header';
 import { CohortList } from './components/Cohorts/CohortList';
 import { StudentList } from './components/Students/StudentList';
-import { Cohort } from './lib/database.types';
+import { Cohort } from './lib/api';
 
 function App() {
   const { user, loading } = useAuth();
