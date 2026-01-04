@@ -1,25 +1,36 @@
-version: '3.8'
 services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: lltool-web
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_DATABASE=lltool
+      - DB_USERNAME=lltool
+      - DB_PASSWORD=lltoolpassword
+    user: root
+
   db:
     image: mysql:8.0
+    container_name: lltool-db
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: lltool
-      MYSQL_USER: lltool_user
-      MYSQL_PASSWORD: lltool_pass
+      MYSQL_USER: lltool
+      MYSQL_PASSWORD: lltoolpassword
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
-      - db_data:/var/lib/mysql
-
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    environment:
-      PMA_HOST: db
-      PMA_USER: root
-      PMA_PASSWORD: rootpassword
-    ports:
-      - "8080:80"
+      - mysql_data:/var/lib/mysql
 
 volumes:
-  db_data:
+  mysql_data:
+

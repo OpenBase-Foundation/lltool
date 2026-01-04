@@ -1,0 +1,8 @@
+# Allow access to photos
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /storage/photos/
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^(.*)$ ../../storage/photos/$1 [L]
+</IfModule>
+

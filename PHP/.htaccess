@@ -1,0 +1,46 @@
+# LLTool - Apache Configuration
+
+# Enable Rewrite Engine
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Redirect to index.php if file doesn't exist
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+
+# Security Headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Prevent access to sensitive files
+<FilesMatch "^(\.env|composer\.(json|lock)|\.git)">
+    Require all denied
+</FilesMatch>
+
+# Allow access to storage/photos
+<IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_URI} ^/storage/photos/
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^storage/photos/(.*)$ storage/photos/$1 [L]
+</IfModule>
+
+# PHP Settings
+<IfModule mod_php8.c>
+    php_value upload_max_filesize 10M
+    php_value post_max_size 10M
+    php_value max_execution_time 300
+    php_value memory_limit 256M
+</IfModule>
+
+# Disable directory listing
+Options -Indexes
+
+# Default charset
+AddDefaultCharset UTF-8
+

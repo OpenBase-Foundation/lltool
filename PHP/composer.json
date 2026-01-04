@@ -1,12 +1,36 @@
 {
-  "name": "lltool-php",
-  "description": "PHP rewrite scaffold of LLTool",
+  "name": "lltool/lltool",
+  "type": "project",
   "require": {
-    "php": ">=8.0"
+    "php": "^8.2",
+    "ext-zip": "*",
+    "auth0/auth0-php": "^8.0",
+    "sentry/sentry": "^4.0",
+    "vlucas/phpdotenv": "^5.5",
+    "doctrine/dbal": "^3.6",
+    "league/flysystem": "^3.15",
+    "phpoffice/phpword": "^1.4",
+    "guzzlehttp/guzzle": "^7.10",
+    "guzzlehttp/psr7": "^2.8",
+    "http-interop/http-factory-guzzle": "^1.2"
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/package-versions-deprecated": true,
+      "php-http/discovery": true
+    },
+    "audit": {
+      "ignore": [
+        "PKSA-jw72-bn8m-h7rc"
+      ]
+    }
   },
   "autoload": {
     "psr-4": {
-      "App\\": "src/"
-    }
+      "LLTool\\": ""
+    },
+    "classmap": [
+      "app/"
+    ]
   }
 }
